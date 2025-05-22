@@ -24,6 +24,8 @@ Globetrotter es una **aplicación frontend de reserva de vuelos intuitiva y resp
 - **Vercel:** Plataforma para el despliegue rápido y escalable de aplicaciones Next.js.
 
 ---
+- **Archivo de Figma:**
+https://www.figma.com/design/b4Kux49QkKd7zdWgqEEM2U/Dise%C3%B1o-de-Globetrotter?node-id=1333-67&t=4jZFfLV4UkOIaKvE-1
 
 ## Cómo Iniciar el Proyecto (Localmente)
 
