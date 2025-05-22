@@ -1,4 +1,3 @@
-// src/app/components/InputGroup.tsx
 import React from "react";
 import { SelectInput } from "./inputs/SelectInput";
 import { TextAreaInput } from "./inputs/TextAreaInput";

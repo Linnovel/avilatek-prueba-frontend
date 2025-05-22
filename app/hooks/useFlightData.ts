@@ -1,4 +1,3 @@
-// src/hooks/useFlightData.ts
 import { useState, useEffect } from "react";
 
 interface FlightDetail {
@@ -34,41 +33,38 @@ export function useFlightData(): UseFlightDataReturn {
         const data: FlightDetail[] = await response.json();
 
         setAllFlightDetails(data);
-
-        // --- INICIO DE LA SIMPLIFICACIÓN ---
-
-        // 1. Obtener destinos únicos de una forma más explícita
+      
         const uniqueDestinations: string[] = [];
         for (const item of data) {
-          if (!uniqueDestinations.includes(item.destination)) { 
-            uniqueDestinations.push(item.destination); // Lo añadimos
+          if (!uniqueDestinations.includes(item.destination)) {
+            uniqueDestinations.push(item.destination);
           }
         }
         setAvailableDestinations(uniqueDestinations);
 
-        // 2. Obtener clases de vuelo únicas de una forma más explícita
         const uniqueFlightClasses: string[] = [];
         for (const item of data) {
-          if (!uniqueFlightClasses.includes(item.class)) { // Si la clase no está ya en la lista
-            uniqueFlightClasses.push(item.class); // La añadimos
+          if (!uniqueFlightClasses.includes(item.class)) {
+            uniqueFlightClasses.push(item.class);
           }
         }
         setAvailableFlightClasses(uniqueFlightClasses);
 
-        // --- FIN DE LA SIMPLIFICACIÓN ---
-
         setErrorFetchingFlights(null);
-      } catch (error: any) {
+      } catch (error) {
         console.error("Error fetching the flights data:", error);
+     
         setErrorFetchingFlights(
-          `No se pudieron cargar los datos de vuelos: ${error.message || error}`
+          `No se pudieron cargar los datos de vuelos: ${
+            error instanceof Error ? error.message : String(error) 
+          }`
         );
       } finally {
         setLoadingFlights(false);
       }
     };
     fetchFlightData();
-  }, []); // El array de dependencias vacío asegura que se ejecuta solo una vez al montar
+  }, []); 
 
   return {
     allFlightDetails,

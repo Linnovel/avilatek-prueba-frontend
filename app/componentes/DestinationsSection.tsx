@@ -1,6 +1,5 @@
-// src/app/components/DestinationsSection.tsx
 import React from "react";
-import { DestinationCard } from "./DestinationCard"; // Importa la tarjeta de destino
+import { DestinationCard } from "./DestinationCard";
 
 export const DestinationsSection: React.FC = () => {
   return (

@@ -1,4 +1,3 @@
-// src/app/components/Navbar.tsx
 import Link from "next/link";
 import React from "react";
 
@@ -18,7 +17,9 @@ export const Navbar: React.FC = () => {
         </Link>
         <Link
           href="/#"
-          className="bg-black text-white px-6 py-2 rounded-full hover:bg-opacity-80"
+          className=" bg-black text-white px-6 py-2 rounded-full
+              transition ease-in-out duration-300
+              hover:bg-opacity-80 hover:scale-105 hover:shadow-lg"
         >
           Regístrate
         </Link>

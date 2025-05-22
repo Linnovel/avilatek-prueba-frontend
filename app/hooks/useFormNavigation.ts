@@ -1,14 +1,12 @@
-// src/hooks/useFormNavigation.ts
 import { useState, useCallback } from "react";
-import { FormData } from "./useFormData"; // Asegúrate de que la ruta sea correcta
+import { FormData } from "./useFormData"; 
 
-// Definimos la interfaz de lo que nuestro hook devolverá
-export interface UseFormNavigationReturn { // Exporta esta interfaz para que TypeScript la vea
+export interface UseFormNavigationReturn { 
   currentStep: number;
   progressPercentage: number;
   isFirstStep: boolean;
-  isLastStep: boolean; // Indica si es el ÚLTIMO paso del formulario (antes del final)
-  isFinalStep: boolean; // Indica si es el paso de RESUMEN
+  isLastStep: boolean; 
+  isFinalStep: boolean; 
   nextStep: () => void;
   prevStep: () => void;
   goToStep: (step: number) => void;
@@ -16,20 +14,17 @@ export interface UseFormNavigationReturn { // Exporta esta interfaz para que Typ
   resetForm: () => void;
 }
 
-// Definimos el número total de pasos "activos" del formulario (Step1, Step2, Step3)
-// El paso 4 (Summary) es el paso final.
+
 const TOTAL_ACTIVE_STEPS = 3;
 
 export function useFormNavigation(
   formData: FormData,
   setFormData: React.Dispatch<React.SetStateAction<FormData>>
-): UseFormNavigationReturn { // Asegúrate de que el tipo de retorno esté bien definido
+): UseFormNavigationReturn { 
   const [currentStep, setCurrentStep] = useState(1);
 
-  // Calcula el porcentaje de progreso basado en los pasos activos
   const progressPercentage = (currentStep / (TOTAL_ACTIVE_STEPS + 1)) * 100; // +1 para incluir el resumen como un 'paso' visual
 
-  // Funciones de validación para cada paso
   const validateStep = useCallback(
     (step: number, showAlert: boolean = true): boolean => {
       let isValid = true;

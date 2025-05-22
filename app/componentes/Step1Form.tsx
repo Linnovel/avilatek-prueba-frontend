@@ -1,7 +1,6 @@
-// src/app/components/Step1Form.tsx
 import React from "react";
-import { InputGroup } from "./InputGroup"; // Importa InputGroup
-import { FormData } from "../hooks/useFormData"; // Importa la interfaz FormData
+import { InputGroup } from "./InputGroup";
+import { FormData } from "../hooks/useFormData";
 
 interface Step1FormProps {
   formData: FormData;

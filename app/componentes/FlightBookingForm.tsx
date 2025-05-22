@@ -1,5 +1,4 @@
-// src/app/components/FlightBookingForm.tsx
-"use client"; // ¡Muy importante para Next.js!
+"use client";
 
 import React from "react";
 
@@ -10,8 +9,8 @@ import { Step1Form } from "./Step1Form";
 import { Step2Form } from "./Step2Form";
 import { Step3Form } from "./Step3Form";
 import { Step4Summary } from "./Step4Summary";
+import { ProgressBar } from "./ProgressBar";
 
-// Este componente encapsulará todo el formulario multipaso
 export default function FlightBookingForm() {
   const {
     allFlightDetails,
@@ -45,23 +44,19 @@ export default function FlightBookingForm() {
     resetForm,
   } = useFormNavigation(formData, setFormData);
 
-  // Función para manejar el envío final del formulario
   const handleFinalSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar la página)
+    e.preventDefault();
     if (validateStep(currentStep)) {
-      // Si la validación del paso actual es exitosa
       console.log("Formulario enviado con éxito:", formData);
       alert("¡Reserva completada! Revisa la consola para ver los datos.");
-      resetForm(); // Restablece el formulario a su estado inicial después del envío exitoso
+      resetForm();
     } else {
-      // Si la validación falla (aunque el botón debería estar deshabilitado en este caso)
       alert(
         "Por favor, completa todos los campos requeridos antes de confirmar."
       );
     }
   };
 
-  // Muestra un mensaje de carga mientras se obtienen los datos de los vuelos
   if (loadingFlights) {
     return (
       <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-xl w-full max-w-lg">
@@ -70,7 +65,6 @@ export default function FlightBookingForm() {
     );
   }
 
-  // Muestra un mensaje de error si la carga de datos falla
   if (errorFetchingFlights) {
     return (
       <div className="bg-red-100 border border-red-400 text-red-700 p-4 rounded-lg">
@@ -85,17 +79,9 @@ export default function FlightBookingForm() {
         Reserva tu Vuelo
       </h2>
 
-      {/* Barra de progreso del formulario */}
-      <div className="w-full bg-gray-200 rounded-full h-2.5 mb-6">
-        <div
-          className="bg-blue-600 h-2.5 rounded-full transition-all duration-500 ease-out"
-          style={{ width: `${progressPercentage}%` }}
-        ></div>
-      </div>
+      <ProgressBar currentStep={currentStep} totalSteps={4} />
 
-      {/* El formulario principal que gestiona el envío final */}
       <form onSubmit={handleFinalSubmit}>
-        {/* Renderizado condicional de los pasos del formulario */}
         {currentStep === 1 && (
           <Step1Form
             formData={formData}
@@ -127,21 +113,16 @@ export default function FlightBookingForm() {
           <Step3Form formData={formData} handleChange={handleChange} />
         )}
         {currentStep === 4 && (
-          <Step4Summary // <-- ¡Aquí usamos el nombre correcto!
+          <Step4Summary
             formData={formData}
             calculateTotalPrice={calculateTotalPrice}
-            // Importante: ya NO pasamos onSubmitFinal ni onPrev a Step4Summary.
-            // Los botones de navegación y el botón de submit final están
-            // gestionados por el 'form' padre y los botones a continuación.
           />
         )}
 
-        {/* Controles de navegación del formulario */}
         <div className="flex justify-between mt-8">
-          {/* Botón "Anterior" */}
           {!isFirstStep && (
             <button
-              type="button" // Es un botón normal, no envía el formulario
+              type="button"
               onClick={prevStep}
               className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
             >
@@ -149,26 +130,24 @@ export default function FlightBookingForm() {
             </button>
           )}
 
-          {/* Botón "Siguiente" */}
           {!isFinalStep && (
             <button
-              type="button" // Es un botón normal, no envía el formulario
+              type="button"
               onClick={nextStep}
               className={`px-6 py-2 rounded-md text-white transition-colors duration-200 ${
-                validateStep(currentStep, false) // Valida el paso sin mostrar alertas (para deshabilitar el botón)
+                validateStep(currentStep, false)
                   ? "bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                  : "bg-gray-400 cursor-not-allowed" // Estilo para botón deshabilitado
+                  : "bg-gray-400 cursor-not-allowed"
               }`}
-              disabled={!validateStep(currentStep, false)} // Deshabilita el botón si la validación falla
+              disabled={!validateStep(currentStep, false)}
             >
               Siguiente
             </button>
           )}
 
-          {/* Botón "Confirmar Reserva" (solo visible en el último paso) */}
           {isFinalStep && (
             <button
-              type="submit" // Este botón SÍ envía el formulario al hacer clic
+              type="submit"
               className="px-6 py-2 bg-green-600 rounded-md text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200"
             >
               Confirmar Reserva

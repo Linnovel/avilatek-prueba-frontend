@@ -1,7 +1,7 @@
 // src/app/components/TravelerAccordionItem.tsx
 import React from "react";
-import { Traveler } from "../hooks/useFormData"; // Importa la interfaz Traveler
-import { InputGroup } from "./InputGroup"; // Importa InputGroup
+import { Traveler } from "../hooks/useFormData";
+import { InputGroup } from "./InputGroup";
 
 interface TravelerAccordionItemProps {
   traveler: Traveler;

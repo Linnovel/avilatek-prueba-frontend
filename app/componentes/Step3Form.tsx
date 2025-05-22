@@ -1,4 +1,3 @@
-// src/app/components/Step3Form.tsx
 import React from "react";
 import { InputGroup } from "./InputGroup";
 import { ToggleSwitch } from "./ToggleSwitch";
@@ -13,7 +12,6 @@ interface Step3FormProps {
   ) => void;
 }
 
-// Costos de servicios adicionales (idealmente importar de un archivo de constantes o que el hook lo pase)
 const TRAVEL_INSURANCE_COST = 30;
 const PREFERRED_SEATS_COST_PER_TRAVELER = 20;
 

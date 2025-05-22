@@ -101,8 +101,7 @@ export const Step4Summary: React.FC<Step4SummaryProps> = ({
             {formData.requireSpecialAssistance &&
               formData.specialAssistanceNote && (
                 <span className="italic">
-                  {" "}
-                  ("{formData.specialAssistanceNote}")
+                  {` ("${formData.specialAssistanceNote}")`}
                 </span>
               )}
           </li>

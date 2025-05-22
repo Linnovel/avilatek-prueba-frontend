@@ -1,4 +1,3 @@
-// src/app/components/inputs/SelectInput.tsx
 import React from "react";
 
 interface SelectInputProps {

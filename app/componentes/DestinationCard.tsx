@@ -1,4 +1,3 @@
-// src/app/components/DestinationCard.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,15 +14,10 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
   image,
 }) => {
   return (
-    // Usa Link para la navegación interna en Next.js
     <Link href="/#" className="block">
       <div className="relative overflow-hidden rounded-xl h-40 group">
         <Image
-          // Si tienes rutas de imagen específicas para cada ciudad, úsalas.
-          // Si no, puedes tener una lógica fallback más robusta.
-          // image || "/argentina.jpg || /madrid.jpg || /new-york.jpg" no es una ruta válida.
-          // Deberías usar la prop 'image' directamente o definir un fallback claro.
-          src={image} // Aquí simplemente usamos la prop 'image'
+          src={image}
           alt={`${city} destination`}
           fill
           className="object-cover transition-transform group-hover:scale-110"

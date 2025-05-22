@@ -1,7 +1,5 @@
-// src/hooks/useFormData.ts
 import { useState, useMemo } from "react";
 
-// Interfaces (mantén las interfaces como están, son perfectas)
 interface FlightDetail {
   destination: string;
   class: string;
@@ -10,32 +8,28 @@ interface FlightDetail {
 
 export interface Traveler {
   fullName: string;
-  dob: string; // Date of Birth
+  dob: string; 
   documentType: string;
   documentNumber: string;
 }
 
 export interface FormData {
-  // Paso 1
   destination: string;
   departureDate: string;
   returnDate: string;
   flightClass: string;
-  // Paso 2
   numberOfTravelers: number;
   travelers: Traveler[];
   travelingWithPets: boolean;
   numberOfPets: number;
   extraLuggage: boolean;
   numberOfBags: number;
-  // Paso 3
   addTravelInsurance: boolean;
   selectPreferredSeats: boolean;
   requireSpecialAssistance: boolean;
   specialAssistanceNote: string;
 }
 
-// Costos de servicios adicionales (mantén los costos como están)
 const PET_COST_PER_UNIT = 100;
 const LUGGAGE_COST_PER_UNIT = 50;
 const TRAVEL_INSURANCE_COST = 30;
@@ -104,7 +98,6 @@ export function useFormData({ allFlightDetails }: UseFormDataProps): UseFormData
     const { name, value } = e.target;
     let numValue = parseInt(value, 10);
 
-    // Asegura que el valor esté dentro de los límites
     if (isNaN(numValue) || numValue < min) {
       numValue = min;
     }
@@ -113,27 +106,22 @@ export function useFormData({ allFlightDetails }: UseFormDataProps): UseFormData
     }
 
     setFormData((prevData) => {
-      let newTravelers = prevData.travelers; // Inicializa con los viajeros actuales
+      let newTravelers = prevData.travelers; 
 
       if (name === "numberOfTravelers") {
-        // Opción 1: Simplemente tomamos una porción del array existente o lo rellenamos
-        // Esto es una forma inmutable de crear el nuevo array de viajeros
+   
         if (numValue > prevData.travelers.length) {
-          // Si necesitamos más viajeros, creamos un nuevo array
-          // que contiene los viajeros existentes MÁS los nuevos
+   
           const travelersToAdd = Array(numValue - prevData.travelers.length)
-            .fill(null) // Llenamos con null para luego mapear
+            .fill(null) 
             .map(() => ({ fullName: "", dob: "", documentType: "", documentNumber: "" }));
           newTravelers = [...prevData.travelers, ...travelersToAdd];
         } else if (numValue < prevData.travelers.length) {
-          // Si necesitamos menos viajeros, cortamos el array existente
           newTravelers = prevData.travelers.slice(0, numValue);
         } else {
-            // Si el número es el mismo, no hacemos nada con el array de viajeros
             newTravelers = prevData.travelers;
         }
 
-        // Ajusta el índice del acordeón abierto si es necesario
         if (openTravelerIndex !== null && openTravelerIndex >= numValue) {
           setOpenTravelerIndex(numValue > 0 ? 0 : null);
         } else if (openTravelerIndex === null && numValue > 0) {
@@ -141,7 +129,6 @@ export function useFormData({ allFlightDetails }: UseFormDataProps): UseFormData
         }
       }
 
-      // Devolvemos el nuevo objeto de estado inmutable
       return {
         ...prevData,
         [name]: numValue,
@@ -156,14 +143,11 @@ export function useFormData({ allFlightDetails }: UseFormDataProps): UseFormData
   ) => {
     const { name, value } = e.target;
     setFormData((prevData) => {
-      // Creamos una nueva copia del array de viajeros
       const newTravelers = [...prevData.travelers];
-      // Modificamos la copia en el índice específico
       newTravelers[index] = {
         ...newTravelers[index],
         [name]: value,
       };
-      // Devolvemos el nuevo objeto de estado con el array de viajeros actualizado
       return {
         ...prevData,
         travelers: newTravelers,
@@ -208,9 +192,7 @@ export function useFormData({ allFlightDetails }: UseFormDataProps): UseFormData
     return totalPrice;
   }, [formData, allFlightDetails]);
 
-  // Obtener la fecha mínima para el campo de regreso
   const minReturnDate = formData.departureDate ? formData.departureDate : "";
-  // Obtener la fecha mínima para el campo de salida (hoy)
   const today = new Date();
   const year = today.getFullYear();
   const month = (today.getMonth() + 1).toString().padStart(2, '0');
@@ -228,6 +210,6 @@ export function useFormData({ allFlightDetails }: UseFormDataProps): UseFormData
     calculateTotalPrice,
     openTravelerIndex,
     toggleTravelerAccordion,
-    setFormData, // Se exporta setFormData para que `useFormNavigation` pueda actualizarlo
+    setFormData, 
   };
 }

@@ -1,4 +1,3 @@
-// src/app/components/Step2Form.tsx
 import React from "react";
 import { InputGroup } from "./InputGroup";
 import { ToggleSwitch } from "./ToggleSwitch";
@@ -27,7 +26,6 @@ interface Step2FormProps {
   toggleTravelerAccordion: (index: number) => void;
 }
 
-// Costos de servicios adicionales (idealmente importar de un archivo de constantes o que el hook lo pase)
 const PET_COST_PER_UNIT = 100;
 const LUGGAGE_COST_PER_UNIT = 50;
 

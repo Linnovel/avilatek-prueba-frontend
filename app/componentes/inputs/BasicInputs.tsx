@@ -1,4 +1,3 @@
-// src/app/components/inputs/BasicInput.tsx
 import React from "react";
 
 interface BasicInputProps {
@@ -6,7 +5,7 @@ interface BasicInputProps {
   name: string;
   value: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type?: "text" | "number" | "date"; // Definimos explícitamente los tipos que maneja
+  type?: "text" | "number" | "date";
   placeholder?: string;
   min?: string | number;
   max?: string | number;
