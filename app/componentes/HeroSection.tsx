@@ -10,10 +10,11 @@ export const HeroSection: React.FC = () => {
         <p className="text-white text-xl mb-2">
           Realiza tu próximo vuelo con nosotros
         </p>
-        <h1 className="text-white  md:text-6xl font-bold mb-4">
-          Vuela Fácil, Vuela Lejos.
+        <h1 className="text-white text-4xl  md:text-6xl font-semibold mb-4">
+          Reserva facilmente tu proximo viaje y{" "}
+          <span className="text-yellow-500"> vuela con nosotros</span>
         </h1>
-        <p className="text-white text-xl mb-8">Explora ahora</p>
+        <p className="text-white text-lg font-medium mb-8">Facil y rapido</p>
         <div className="flex gap-4 justify-center md:justify-start">
           <Link
             href="/#"
