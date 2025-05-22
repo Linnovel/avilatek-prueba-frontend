@@ -39,7 +39,6 @@ export default function FlightBookingForm() {
     prevStep,
     isFirstStep,
     isFinalStep,
-    progressPercentage,
     validateStep,
     resetForm,
   } = useFormNavigation(formData, setFormData);

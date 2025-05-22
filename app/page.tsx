@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Navbar } from "./componentes/Navbar";
 import { HeroSection } from "./componentes/HeroSection";
-import { DestinationsSection } from "./componentes/DestinationsSection";
 
 export default function Home() {
   return (
