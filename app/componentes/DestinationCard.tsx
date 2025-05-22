@@ -16,7 +16,7 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
 }) => {
   return (
     // Usa Link para la navegación interna en Next.js
-    <a href="/#" className="block">
+    <Link href="/#" className="block">
       <div className="relative overflow-hidden rounded-xl h-40 group">
         <Image
           // Si tienes rutas de imagen específicas para cada ciudad, úsalas.
@@ -33,6 +33,6 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
           {city} <span className="text-2xl">{flag}</span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };

@@ -1,7 +1,1 @@
 @import "tailwindcss";
-
-.img-bg {
-  background-image: url("/avion.png");
-  background-repeat: no-repeat;
-  object-fit: cover;
-}

@@ -13,7 +13,7 @@ export default function Home() {
           alt="Vista desde la ventana del avión al atardecer"
           fill
           priority
-          className="object-cover opacity-95"
+          className="object-cover absolute inset-0 opacity-95"
         />
         <div className="absolute inset-0 bg-black/30"></div>{" "}
         {/* Ejemplo de overlay oscuro */}
