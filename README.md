@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✈️ Globetrotter - Tu Compañero de Vuelos
 
-## Getting Started
+## Descripción del Proyecto
 
-First, run the development server:
+Globetrotter es una **aplicación frontend de reserva de vuelos intuitiva y responsiva**, construida con **Next.js y Tailwind CSS**. Permite a los usuarios buscar y reservar vuelos a diferentes destinos, proporcionando una experiencia de usuario fluida a través de un formulario de varios pasos. Desde la selección del destino hasta los detalles del pasajero y la confirmación, Globetrotter simplifica el proceso de planificación de tu próximo viaje.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Características Principales
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Formulario de Reserva Multi-paso:** Guía al usuario a través de un proceso de reserva claro y organizado.
+- **Selección de Destinos:** Elige entre una variedad de destinos y clases de vuelo disponibles.
+- **Gestión de Pasajeros:** Añade y gestiona los detalles de múltiples viajeros.
+- **Resumen de Reserva:** Visualiza el costo total y los detalles del vuelo antes de confirmar.
+- **Diseño Responsivo:** Experiencia de usuario optimizada para dispositivos móviles y de escritorio.
+- **Integración con API Mock:** Obtiene datos de vuelos desde un endpoint simulado para mayor flexibilidad.
+- **Animaciones Interactivas:** Botones con efectos de hover para una interfaz más dinámica.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologías Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js:** Framework de React para el desarrollo de aplicaciones web de alto rendimiento.
+- **React:** Biblioteca de JavaScript para construir interfaces de usuario interactivas.
+- **TypeScript:** Añade tipado estático para un código más robusto y mantenible.
+- **Tailwind CSS:** Framework CSS utility-first para un diseño rápido y personalizable.
+- **ESLint:** Herramienta de linting para mantener la calidad y consistencia del código.
+- **Vercel:** Plataforma para el despliegue rápido y escalable de aplicaciones Next.js.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Cómo Iniciar el Proyecto (Localmente)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Sigue estos pasos para tener una copia local del proyecto funcionando en tu máquina.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerrequisitos
 
-## Deploy on Vercel
+Asegúrate de tener instalado:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js (versión 18.x o superior recomendada)
+- npm (normalmente viene con Node.js) o Yarn
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Instalación y Ejecución
+
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/Linnovel/avilatek-prueba-frontend.git](https://github.com/Linnovel/avilatek-prueba-frontend.git)
+    ```
+2.  **Navega al directorio del proyecto:**
+    ```bash
+    cd avilatek-prueba-frontend
+    ```
+3.  **Instala las dependencias:**
+    ```bash
+    npm install
+    # o si usas yarn
+    # yarn install
+    ```
+4.  **Ejecuta el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    # or
+    bun dev
+    ```
+
+---
+
+## Estructura del Proyecto
