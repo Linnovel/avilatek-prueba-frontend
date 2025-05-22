@@ -64,5 +64,3 @@ Asegúrate de tener instalado:
     ```
 
 ---
-
-## Estructura del Proyecto
