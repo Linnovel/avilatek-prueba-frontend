@@ -22,10 +22,15 @@ Globetrotter es una **aplicación frontend de reserva de vuelos intuitiva y resp
 - **Tailwind CSS:** Framework CSS utility-first para un diseño rápido y personalizable.
 - **ESLint:** Herramienta de linting para mantener la calidad y consistencia del código.
 - **Vercel:** Plataforma para el despliegue rápido y escalable de aplicaciones Next.js.
+- **Validaciones extras:** No se puede elegir una fecha de regresa que sea anterior a la fecha de salida.
+- Cantidad maxima de 10 items por mascotas y equipaje.
+- Los viajeros extras no pueden ser iguales.
+- No se puede dejar ningun input vacio.
 
 ---
+
 - **Archivo de Figma:**
-https://www.figma.com/design/b4Kux49QkKd7zdWgqEEM2U/Dise%C3%B1o-de-Globetrotter?node-id=1333-67&t=4jZFfLV4UkOIaKvE-1
+  https://www.figma.com/design/b4Kux49QkKd7zdWgqEEM2U/Dise%C3%B1o-de-Globetrotter?node-id=1333-67&t=4jZFfLV4UkOIaKvE-1
 
 ## Cómo Iniciar el Proyecto (Localmente)
 
