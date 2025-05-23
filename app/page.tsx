@@ -7,7 +7,7 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden">
       <div className="fixed inset-0 z-0 h-screen">
         <Image
-          src="/avion.png"
+          src="/avion.webp"
           alt="Vista desde la ventana del avión al atardecer"
           fill
           priority

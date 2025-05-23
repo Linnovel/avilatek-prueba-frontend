@@ -4,7 +4,10 @@ import React from "react";
 export const Navbar: React.FC = () => {
   return (
     <nav className="flex justify-between items-center px-8 py-6 md:px-32">
-      <div className="text-white text-2xl font-medium">GlobeTrotter</div>
+      <div className="text-white gap-2 flex flex-row text-2xl font-medium">
+        <img src={"/Circle.svg"} alt="circle-icon" />
+        GlobeTrotter
+      </div>
       <div className="hidden md:flex items-center gap-12">
         <Link href="#" className="text-white hover:text-gray-200">
           Servicios
